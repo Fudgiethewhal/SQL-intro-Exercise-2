@@ -35,8 +35,16 @@ where Name LIKE '%macbook%';
 -- find all products that are on sale
 select * from products
 where OnSale = 1; 
+
 -- find the average price of all products
 select AVG(price) from products;
--- find all Geek Squad employees who don't have a middle initial
 
--- find all products from the products table whose stock level is in the range -- of 500 to 1200. Order by Price from least to greatest. Hint: Use the between keyword
+-- find all Geek Squad employees who don't have a middle initial
+select * from employees
+Where Title LIKE '%Geek Squad%' AND MiddleInitial is null;
+
+-- find all products from the products table whose stock level is in the range 
+-- of 500 to 1200. Order by Price from least to greatest. Hint: Use the between keyword
+select * from products
+where stocklevel  between 500 and 1200
+ORDER BY Price asc;
